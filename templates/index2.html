@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>step1 Flask</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <form id="ul_form">
+        <input type="file", name="img_file", accept="image/*">
+        <button id="upload_btn" type="button">upload</button>
+    </form>
+
+    <script>
+        $(function(){
+            $("#upload_btn").on("click", function(){
+                // upload ボタンが押された時の処理
+                $("#upload_btn").on("click", function(){
+                    $("#ul_form").attr("target", _self);
+                    $("#ul_form").attr("method", "post");
+                    $("#up_form").attr("action", "{{url_for('upload')}}");
+                    $("#ul_form").attr("enctype", "multipart/form-data");
+                    $("#ul_form").submit();
+                })
+            })
+        });
+    </script>
+
+
+</body>
+</html>

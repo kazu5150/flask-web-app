@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>step1 Flask</title>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <form id="ul_form" method="POST" enctype="multipart/form-data" action="{{ url_for('upload') }}">
+        <input type="file" name="img_file" accept="image/*">
+        <button id="upload_btn" type="submit">Upload</button>
+    </form>
+
+    <script>
+        $(function(){
+            $("#ul_form").on("submit", function(){
+                // フォームが送信された後の処理
+                console.log("フォームが送信されました。");
+            });
+        });
+    </script>
+</body>
+</html>
